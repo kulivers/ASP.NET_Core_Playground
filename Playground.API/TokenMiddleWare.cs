@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
-namespace ASP.NET_Core_Playground
+namespace Playground.API
 {
     public class TokenMiddleware
     {

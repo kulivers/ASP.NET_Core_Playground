@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET Core Playground", "ASP.NET Core Playground\ASP.NET Core Playground.csproj", "{BB419160-4385-4DFE-B60F-E9D6B0A2F2F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.API", "Playground.API\Playground.API.csproj", "{BB419160-4385-4DFE-B60F-E9D6B0A2F2F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parky API", "Parky API\Parky API.csproj", "{D44FEFF6-BE1D-4718-8ACA-24A792176431}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Data", "Playground.Data\Playground.Data.csproj", "{3E2D696F-C53E-437C-9887-EF213027B653}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{BB419160-4385-4DFE-B60F-E9D6B0A2F2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB419160-4385-4DFE-B60F-E9D6B0A2F2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB419160-4385-4DFE-B60F-E9D6B0A2F2F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D44FEFF6-BE1D-4718-8ACA-24A792176431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D44FEFF6-BE1D-4718-8ACA-24A792176431}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D44FEFF6-BE1D-4718-8ACA-24A792176431}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D44FEFF6-BE1D-4718-8ACA-24A792176431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2D696F-C53E-437C-9887-EF213027B653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2D696F-C53E-437C-9887-EF213027B653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2D696F-C53E-437C-9887-EF213027B653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2D696F-C53E-437C-9887-EF213027B653}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

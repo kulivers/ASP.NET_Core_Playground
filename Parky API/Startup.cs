@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Parky_API.Data;
 
 namespace Parky_API
 {
@@ -19,6 +21,9 @@ namespace Parky_API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            string test = Configuration.GetConnectionString("TestDatabase");
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine(test);
         }
 
         public IConfiguration Configuration { get; }
@@ -26,6 +31,8 @@ namespace Parky_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDataBaseContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
