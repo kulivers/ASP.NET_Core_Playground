@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Playground.Data;
+using Playground.Data.Repositories;
 
 namespace Playground.API
 {
@@ -23,12 +24,18 @@ namespace Playground.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration.GetConnectionString("TestDatabase");
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddControllers();
             services.AddDbContext<WebApiDbContext>(builder =>
             {
-                builder.UseSqlServer(connectionString, b => b.MigrationsAssembly("Playground.API"));
+                builder.UseSqlServer(connectionString, b =>
+                {
+                    b.MigrationsAssembly("Playground.API");
+                    b.EnableRetryOnFailure();
+                });
             });
+            services.AddScoped<IRepository<Employee>, EmployeeRepository>();
+            services.AddScoped<IRepository<Customer>, CustomerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

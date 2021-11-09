@@ -1,14 +1,14 @@
 namespace Playground.Data
 {
-    public class Employee : Person, IHasBalance
+    public class Customer : Person, IHasBalance
     {
         public decimal Balance { get; set; }
 
-        public Employee()
+        public Customer()
         {
             
         }
-        public Employee(int id, string firstname, string lastname, decimal balance = 0)
+        public Customer(int id, string firstname, string lastname, decimal balance = 1000)
         {
             Id = id;
             Name = firstname;
