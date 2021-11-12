@@ -22,6 +22,8 @@ namespace Playground.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Employee>().Property(p => p.Balance).HasColumnType("decimal(18,4)");
+            modelBuilder.Entity<Customer>().Property(p => p.Balance).HasColumnType("decimal(18,4)");
             modelBuilder.Entity<Employee>().HasData(new Employee(2, "egor", "cooleshov"));
             modelBuilder.Entity<Employee>().HasData(new Employee(1, "lazy", "Jonny"));
             modelBuilder.Entity<Customer>().HasData(new Customer(2, "big", "dyadya", 1000m));

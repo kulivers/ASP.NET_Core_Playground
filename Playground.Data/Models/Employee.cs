@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Playground.Data
 {
     public class Employee : Person, IHasBalance

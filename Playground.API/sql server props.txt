@@ -1,0 +1,6 @@
+                    //server name -DESKTOP-94PAMUT\MSSQLSERVER01
+                    //host name - DESKTOP-94PAMUT, id = 7404
+                    //UserName = TestUserName / LoginForRider
+                    //instance name = MSSQLSERVER01
+                    //owner = DESKTOP-94PAMUT\Egor
+                    //C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER01\MSSQL

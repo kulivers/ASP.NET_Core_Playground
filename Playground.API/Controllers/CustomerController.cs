@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Playground.Data;
 using Playground.Data.Repositories;
@@ -10,23 +8,23 @@ namespace Playground.API.Controllers
 {
     [Route("/api/[controller]")]
     [ApiController]
-    public class EmployeesController : ControllerBase
+    public class CustomersController : ControllerBase
     {
-        private readonly IRepository<Employee> _context;
+        private readonly IRepository<Customer> _context;
 
-        public EmployeesController(IRepository<Employee> contextEmployees)
+        public CustomersController(IRepository<Customer> contextCustomers)
         {
-            _context = contextEmployees;
+            _context = contextCustomers;
         }
 
         [HttpGet]
-        public IEnumerable<Employee> Get()
+        public IEnumerable<Customer> Get()
         {
             return _context.All;
         }
 
         [HttpGet("{id}")]
-        public Employee Get(int id)
+        public Customer Get(int id)
         {
             try
             {
@@ -40,12 +38,12 @@ namespace Playground.API.Controllers
         }
 
         [HttpPost]
-        public void Add([FromBody] Employee employee)
+        public void Add([FromBody] Customer Customer)
         {
             try
             {
-                Console.WriteLine(employee.Id + " - " + employee.Name);
-                _context.Add(employee);
+                Console.WriteLine(Customer.Id + " - " + Customer.Name);
+                _context.Add(Customer);
 
             }
             catch (Exception e)
@@ -56,11 +54,11 @@ namespace Playground.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromQuery] Employee employee)
+        public void Put(int id, [FromQuery] Customer Customer)
         {
             try
             {
-                _context.Update(employee);
+                _context.Update(Customer);
             }
             catch (Exception e)
             {
@@ -70,11 +68,11 @@ namespace Playground.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id, [FromQuery] Employee employee)
+        public void Delete(int id, [FromQuery] Customer Customer)
         {
             try
             {
-                _context.Delete(employee);
+                _context.Delete(Customer);
             }
             catch (Exception e)
             {
@@ -83,4 +81,5 @@ namespace Playground.API.Controllers
             }
         }
     }
+
 }

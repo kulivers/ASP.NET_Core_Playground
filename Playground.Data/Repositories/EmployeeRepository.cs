@@ -28,7 +28,9 @@ namespace Playground.Data.Repositories
         {
             try
             {
+                Console.WriteLine(entity.Id + " - " + entity.Name);
                 _context.Employees.Add(entity);
+                _context.SaveChanges();
             }
             catch (Exception e)
             {
