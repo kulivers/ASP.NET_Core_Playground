@@ -30,13 +30,13 @@ namespace Playground.API
             {
                 builder.UseSqlServer(connectionString, b =>
                 {
-
                     b.MigrationsAssembly("Playground.API");
                     b.EnableRetryOnFailure();
+                    
                 });
                 
             });
-            services.AddScoped<IRepository<Employee>, EmployeeRepository>();//teest why do we need it
+            services.AddScoped<IRepository<Employee>, EmployeeRepository>();
             services.AddScoped<IRepository<Customer>, CustomerRepository>();
         }
 
@@ -47,7 +47,7 @@ namespace Playground.API
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseRouting();
             app.UseEndpoints(
                 endpoints =>

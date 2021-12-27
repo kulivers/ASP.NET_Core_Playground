@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Playground.Data;
 
 namespace ASP.NET_Core_Playground.Migrations
 {
     [DbContext(typeof(WebApiDbContext))]
-    partial class WebApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211112150943_deletedOrdersTable")]
+    partial class deletedOrdersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,18 +92,6 @@ namespace ASP.NET_Core_Playground.Migrations
                             LastName = "Jonny",
                             Name = "lazy"
                         });
-                });
-
-            modelBuilder.Entity("Playground.Data.TestGuy", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TestGuys");
                 });
 #pragma warning restore 612, 618
         }

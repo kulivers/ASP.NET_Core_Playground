@@ -4,8 +4,7 @@ using System.Transactions;
 namespace Playground.Data
 {
     public class Order
-    {
-        [Key] public int Id { get; set; }
+    { 
         private Person P1 { get; }
         private Person P2 { get; }
         public decimal Money { get; set; }

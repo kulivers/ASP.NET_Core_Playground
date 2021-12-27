@@ -13,7 +13,7 @@ namespace Playground.API.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly IRepository<Employee> _context;
-
+        
         public EmployeesController(IRepository<Employee> contextEmployees)
         {
             _context = contextEmployees;

@@ -8,7 +8,7 @@ namespace Playground.Data
     {
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        
 
         public WebApiDbContext(DbContextOptions<WebApiDbContext> options) : base(options)
         {
@@ -22,6 +22,7 @@ namespace Playground.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            // if (Database.EnsureCreated()) return;
             modelBuilder.Entity<Employee>().Property(p => p.Balance).HasColumnType("decimal(18,4)");
             modelBuilder.Entity<Customer>().Property(p => p.Balance).HasColumnType("decimal(18,4)");
             modelBuilder.Entity<Employee>().HasData(new Employee(2, "egor", "cooleshov"));
